@@ -1,0 +1,55 @@
+body {
+	background: #333;
+	text-align: center;
+	color: white;
+}
+
+#greeting {
+
+}
+
+h1{
+	margin-top: 10%;
+	text-align: center;
+}
+
+#task{
+	padding-top: 2%;
+}
+
+#task input[type=text] {
+    background: transparent;
+		width: 24em;
+    border: none;
+    border-bottom: 1.5px solid white;
+		padding-left: 5px;
+		padding-right: 5px;
+		color: inherit;
+		text-align: center;
+		/*-webkit-transition: width .35s ease-in-out;
+  transition: width .35s ease-in-out;*/
+}
+
+input:focus {
+    outline:none;
+
+}
+
+#timer{
+	padding-top: 4%;
+}
+
+#buttons{
+	padding-top: 2%;
+
+}
+
+.fa-undo {
+  color: black;
+}
+
+ {
+  background: #000 !important;
+  color: #0f0 !important;
+  outline: solid #f00 1px !important;
+}
