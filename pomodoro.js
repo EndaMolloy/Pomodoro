@@ -3,7 +3,9 @@ window.onload = function() {
 
   var intervalID;
   var seconds;
+  var minutes;
   var sessionValue;
+
 
 
   $(".dial").knob({     "min": 0,
@@ -43,27 +45,36 @@ window.onload = function() {
 
 /////////////////////////////////////////////////////////////
   var userInput = document.getElementById("timeCount").value;
-
+  sessionValue = userInput;
 
   function checkTime(timeLimit){
 
     var currTime = moment();
     var timeRemaining = moment.duration(timeLimit.diff(currTime));
-    seconds = Math.ceil(timeRemaining.asSeconds());
-    updateKnob(seconds);
-    console.log(seconds)
+    minutes = Math.floor(timeRemaining.asMinutes());
+    seconds = parseInt(timeRemaining.asSeconds())+1;
+
+    if(minutes){
+      updateKnob(minutes);
+      // console.log(minutes)
+      // console.log(seconds)
+    }
+    else{
+      updateKnob(seconds);
+      // console.log(seconds)
+    }
+
 
 
   }
 
-  function updateKnob(seconds){
-    document.getElementById("timeCount").value = seconds;
-    $('.dial').val(seconds).trigger('change');
+  function updateKnob(timeLimit){
+    //document.getElementById("timeCount").value = seconds;
+    $('.dial').val(timeLimit).trigger('change');
 
     if(!seconds){
       alert("Times Up")
       window.clearInterval(intervalID)
-
     }
 
   }
@@ -81,7 +92,7 @@ window.onload = function() {
 
   $("#pause").click(function(){
 
-      userInput = seconds;
+      userInput = seconds/60;
       window.clearInterval(intervalID);
 
   })
@@ -102,7 +113,7 @@ window.onload = function() {
      //also one for mouse release
 
      var start = moment();
-     var end = moment(start).add(userInput,'seconds');
+     var end = moment(start).add(userInput*60,'seconds');
      intervalID = window.setInterval(checkTime, 1000, end);
 
      console.log("start time: "+start.format("LTS"));
