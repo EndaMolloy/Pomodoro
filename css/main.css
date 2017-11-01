@@ -4,20 +4,15 @@ body {
 	color: white;
 }
 
-#greeting {
-
-}
 
 h1{
 	margin-top: 10%;
 	text-align: center;
 }
 
-#task{
-	padding-top: 2%;
-}
 
-#task input[type=text] {
+
+#inputContainer input[type=text] {
     background: transparent;
 		width: 24em;
     border: none;
@@ -26,21 +21,103 @@ h1{
 		padding-right: 5px;
 		color: inherit;
 		text-align: center;
+		padding-top: 1.5%;
 		/*-webkit-transition: width .35s ease-in-out;
   transition: width .35s ease-in-out;*/
 }
+
+#taskConfirmed {
+    border: none;
+		border-bottom: 3.5px solid transparent;
+    padding-left: 5px;
+		padding-right: 5px;
+		color: inherit;
+		text-align: center;
+		padding-top: 1.5%;
+		/*-webkit-transition: width .35s ease-in-out;
+  transition: width .35s ease-in-out;*/
+}
+
+
 
 input:focus {
     outline:none;
 
 }
 
+#taskConfirmed:hover .deleteTaskBtn {
+	visibility: visible;
+	opacity: 1;
+}
+
+input.taskCheckbox {
+	position: relative;
+	float: left;
+	-webkit-appearance: none;
+	width: 15px;
+	height: 15px;
+	border: 1px solid white;
+	border-radius: 5px;
+	outline: none;
+	margin-left: 10px;
+	text-align: center;
+	cursor: pointer;
+	transition: all 0.1s ease-in-out;
+		-webkit-transition: all 0.1s ease-in-out;
+			-moz-transition: all 0.1s ease-in-out;
+}
+
+input.taskCheckbox:checked {
+	background-color: #009925;
+}
+
+input.taskCheckbox:checked:after {
+	color: white;
+	content: "\2713";
+	display: block;
+	font-size: 12px;
+	height: 12px;
+	position: absolute;
+	width: 12px;
+	left: 0.5px;
+	bottom: 2px;
+}
+
+.taskLabel {
+
+}
+
+.deleteTaskBtn {
+	float: right;
+	color: white;
+	background: rgba(0,0,0,0);
+	font-size: 16px;
+	font-weight: bold;
+	border: 1px solid white;
+	border-radius: 50%;
+	padding: 10px 5px;
+	line-height: 0;
+	visibility: hidden;
+	opacity: 0;
+	margin-right: 10px;
+	cursor: default;
+	transition: all 0.1s ease-in-out;
+		-webkit-transition: all 0.1s ease-in-out;
+			-moz-transition: all 0.1s ease-in-out;
+}
+
+.deleteTaskBtn:hover {
+	background-color: rgba(255,0,0,0.4);
+}
+
+
 #timer{
-	padding-top: 4%;
+	padding-top: 10%;
 }
 
 #buttons{
-	padding-top: 2%;
+	padding-top: 1%;
+	text-align: center;
 
 }
 
@@ -49,7 +126,7 @@ input:focus {
   color: black;
 }
 
- {
+ *{
   background: #000 !important;
   color: #0f0 !important;
   outline: solid #f00 1px !important;

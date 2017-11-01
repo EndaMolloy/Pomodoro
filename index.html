@@ -18,29 +18,42 @@
   <body>
 
     <div class="container-fluid">
-
         <div id="greeting">
           <h1>Hey Enda, let's get it done!</h1>
         </div>
-        <div id="task">
-          <input type="text">
+        <div id="inputContainer">
+        <input id ="taskInput" type="text">
         </div>
-        <div id="timer">
-            <div class="container">
-            <input type="text" id="timeCount" value="180" class="dial"
-            data-fgColor="#C0ffff"
-            data-skin="tron"
-            data-thickness=".1"
-            data-angleOffset="180" data-displayPrevious=true>
+        <div class ="row">
+          <div class ="col-md-4 col-xs-12"></div>
+          <div class ="col-md-4 col-xs-12">
+            <div id="timer">
+                <div class="container">
+                <input type="text" id="timeCount" value="180" class="dial"
+                data-fgColor="#C0ffff"
+                data-skin="tron"
+                data-thickness=".1"
+                data-angleOffset="180" data-displayPrevious=true>
+                </div>
             </div>
         </div>
-        <div id="buttons">
-          <a id="undo"><i class="fa fa-undo fa-lg" aria-hidden= "true"></i></a>
-          <a id="play"><i class="fa fa-play-circle fa-lg" aria-hidden= "true"></i></a>
-          <a id="pause"><i class="fa fa-pause fa-lg" aria-hidden="true"></i></a>
+        <div class ="col-md-4 col-xs-12">
+            <h4>Today I did</h4>
+            <ul id="myCompletedTask">
+            </ul>
         </div>
-
+        </div>
     </div>
+
+    <div id="buttons">
+      <a id="undo"><i class="fa fa-undo fa-lg" aria-hidden= "true"></i></a>
+      <a id="play"><i class="fa fa-play-circle fa-lg" aria-hidden= "true"></i></a>
+      <a id="pause"><i class="fa fa-pause fa-lg" aria-hidden="true"></i></a>
+      <a id="deleteArr"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></a>
+      <a id="view"><i class="fa fa-eye fa-lg" aria-hidden="true"></i></a>
+    </div>
+
+
 
 
 
