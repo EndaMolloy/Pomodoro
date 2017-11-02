@@ -126,6 +126,12 @@ window.onload = function() {
    var originalState = $("#inputContainer").clone();
    var completedSessionsArr = [];
 
+   if( JSON.parse( localStorage.getItem( 'completedSessionsArr' )))
+	   completedSessionsArr = JSON.parse( localStorage.getItem( 'completedSessionsArr' ));
+   else
+	   localStorage.setItem("completedSessionsArr", JSON.stringify(completedSessionsArr));
+
+
    $(document).on('keypress', '#taskInput', function(e) {
      if (e.which == 13 && $(this).val().length > 0) {
        addButtons(this.value)
@@ -232,10 +238,13 @@ function updateSessionList(){
 
   })
 
-
-
-
 }
+
+$("#send").click(function(){
+
+
+})
+
 
 $("#deleteArr").click(function(){
 
