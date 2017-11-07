@@ -240,8 +240,23 @@ function updateSessionList(){
 
 }
 
+
+
+
 $("#send").click(function(){
 
+  params = [["Spanish", 120, "11-11-17"],["English", 34, "01-13-17"]]
+
+  var spreadsheetID = "1-OvO4fs0xxoo9rYTELMQoPXE7iM4umoDVuZoAAlkEFY"
+  var access_token = "ya29.Glv3BIc6BHGAbXDyNN5cYK6JLwBwXRze3UrTe97hedjwQoHh2_G84xjGAvNkyVde4r0SdwEFPj9aQSEUkvJiO6FWa9_l1NFEVEr-HZcD7tCvs9fFyYSHB8e_qE2g"
+  var gs_body = '{"majorDimension":"ROWS", "values":'+params+'}';
+
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', 'https://sheets.googleapis.com/v4/spreadsheets/'+spreadsheetID+'/values/A1:append?includeValuesInResponse=false&insertDataOption=INSERT_ROWS&responseDateTimeRenderOption=SERIAL_NUMBER&responseValueRenderOption=FORMATTED_VALUE&valueInputOption=USER_ENTERED');
+  xhr.setRequestHeader('Authorization', 'Bearer ' + access_token);
+  xhr.send(gs_body);
+
+  console.log("I've run");
 
 })
 
