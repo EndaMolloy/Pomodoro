@@ -1,0 +1,33 @@
+{
+  "name": "pomodoro",
+  "version": "1.0.0",
+  "description": "Pomodoro with some addons",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2",
+    "googleapis": "^22.2.0",
+    "moment": "^2.19.1",
+    "mongoose": "^4.12.6",
+    "morgan": "^1.9.0",
+    "passport": "^0.4.0",
+    "passport-google-plus-token": "^2.1.0",
+    "passport-jwt": "^3.0.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EndaMolloy/Pomodoro.git"
+  },
+  "author": "enda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EndaMolloy/Pomodoro/issues"
+  },
+  "homepage": "https://github.com/EndaMolloy/Pomodoro#readme"
+}
