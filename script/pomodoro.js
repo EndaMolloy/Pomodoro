@@ -9,54 +9,29 @@ window.onload = function() {
 
 
 
-  $(".dial").knob({     "min": 0,
-                        'max': 180,
-                        format : function (value) {
-                          return value + " min";
-                        },
-                        'release' : function (v) {
-                          userInput = v;
-                        return userInput;
-                      },
+  $("#slider").roundSlider({
+    sliderType: "min-range",
+    handleShape: "square",
+    radius: 100,
+    value: 100,
+    startAngle: 270,
+    handleSize: "+0",
+    mouseScrollAction: true,
+    width: 9,
+    tooltipFormat: function (e) {
+      return e.value + "<div>" + "MINUTES" + "<div>";
+    }
+});
 
-
-                        draw : function () {
-                          $(this.i).css('font-size', '25px');
-                        // "tron" case
-                        if(this.$.data('skin') == 'tron') {
-                            this.cursorExt = 0.3;
-                            var a = this.arc(this.cv)  // Arc
-                                , pa                   // Previous arc
-                                , r = 1;
-                            this.g.lineWidth = this.lineWidth;
-                            if (this.o.displayPrevious) {
-                                pa = this.arc(this.v);
-                                this.g.beginPath();
-                                this.g.strokeStyle = this.pColor;
-                                this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, pa.s, pa.e, pa.d);
-                                this.g.stroke();
-                            }
-                            this.g.beginPath();
-                            this.g.strokeStyle = r ? this.o.fgColor : this.fgColor ;
-                            this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, a.s, a.e, a.d);
-                            this.g.stroke();
-                            this.g.lineWidth = 2;
-                            this.g.beginPath();
-                            this.g.strokeStyle = this.o.fgColor;
-                            this.g.arc( this.xy, this.xy, this.radius - this.lineWidth + 1 + this.lineWidth * 2 / 3, 0, 2 * Math.PI, false);
-                            this.g.stroke();
-                            return false;
-                        }
-                      }
-                    });
 
 
 
 /////////////////////////////////////////////////////////////
 
-  var userInput = document.getElementById("timeCount").value;
+  var userInput = $("#slider").roundSlider("getValue");
   sessionValue = userInput;
 
+  console.log(userInput);
 
 
   function checkTime(timeLimit){

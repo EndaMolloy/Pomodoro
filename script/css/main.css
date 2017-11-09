@@ -39,6 +39,44 @@ h1{
 }
 
 
+.rslider {
+  display: block;
+  margin: auto;
+}
+
+.rs-range-color {
+  background: #FF9900;
+}
+.rs-path-color {
+  background: #333;
+}
+.rs-bg-color {
+  background: #333;
+}
+.rs-tooltip-text {
+  font-size: 32px;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #FF9900;
+}
+.rs-border {
+  border: none;
+}
+
+.rs-border.rs-outer  {
+    border: 5px solid #aaa;
+}
+
+.rs-control .rs-handle {
+    background-color: #FF9900;
+}
+
+.rs-tooltip div  {
+    text-align: center;
+		font-size: 10px;
+    color: white;
+    border-radius: 4px;
+}
 
 input:focus {
     outline:none;
